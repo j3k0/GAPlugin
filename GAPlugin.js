@@ -44,15 +44,5 @@
         return cordovaRef.exec(success, fail, 'GAPlugin', 'exitGA', []);
     };
  
-    if (cordovaRef)
-    {
-        cordovaRef.addConstructor(function() {
-            if(!window.plugins) {
-                window.plugins = {};
-            }
-            if(!window.plugins.gaPlugin) {
-                window.plugins.gaPlugin = new GAPlugin();
-            }
-        });
-    }
+    module.exports = new GAPlugin();
 })(); /* End of Temporary Scope. */

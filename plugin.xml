@@ -6,7 +6,10 @@
 
     <name>GAPlugin</name>
     
-    <asset src="www/GAPlugin.js" target="GAPlugin.js" />
+    <js-module src="GAPlugin.js" name="GAPlugin">
+        <clobbers target="gaPlugin" />
+    </js-module>
+
     
 	<engines>
       <engine name="cordova" version=">=2.0.0" />
@@ -35,7 +38,7 @@
 		</config-file>  
                     
         <source-file src="src/ios/GAPlugin.m" />
-		<source-file src="src/ios/GoogleAnalytics.a" framework="true" />
+		<!-- source-file src="src/ios/GoogleAnalytics.a" framework="true" / -->
 		
         <header-file src="src/ios/GAITransactionItem.h" />
         <header-file src="src/ios/GAITransaction.h" />
@@ -44,6 +47,7 @@
         <header-file src="src/ios/GAI.h" />
         <header-file src="src/ios/GAPlugin.h" />
 		
+        <framework src="GoogleAnalytics.a" />
         <framework src="CoreData.framework" />
         <framework src="SystemConfiguration.framework" />
     </platform>
